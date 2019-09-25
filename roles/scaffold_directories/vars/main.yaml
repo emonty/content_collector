@@ -1,4 +1,4 @@
-collection_parent: "{{ destination_directory }}/{{ collection_namespace}}/{{ collection_name }}"
+collection_parent: "{{ destination_directory }}"
 directories:
   collection:
   - "~/.ansible/ansible-collections"

@@ -1,14 +1,7 @@
-- pause:
-    prompt: |
-
-      #########################################################################
-      Import found for module_utils/{{ item.key }}.py in {{ file['path']|basename }}:
-          y: Copy file and update import statements now
-          n: Do not copy file or update now
-          Y: Copy file and update import statements in all remaining files
-          N: Never copy file or update import statements
-  register: response
-  when: not item.value or item.value in ['n', 'y']
+- name: Override the stupid pause
+  set_fact:
+    response:
+      user_input: Y
 
 - name: Update the frimports with the user's response
   set_fact:
